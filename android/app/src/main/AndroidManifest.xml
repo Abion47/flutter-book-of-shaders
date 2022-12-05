@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.andrewackerman.bookofshaders.book_of_shaders_test">
+    package="com.abion47.flutterbookofshaders.flutter_book_of_shaders">
    <application
-        android:label="book_of_shaders_test"
+        android:label="flutter_book_of_shaders"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

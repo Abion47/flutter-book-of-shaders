@@ -1,6 +1,6 @@
 {
-    "name": "book_of_shaders_test",
-    "short_name": "book_of_shaders_test",
+    "name": "flutter_book_of_shaders",
+    "short_name": "flutter_book_of_shaders",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

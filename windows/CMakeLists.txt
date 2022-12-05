@@ -1,10 +1,10 @@
 # Project-level configuration.
 cmake_minimum_required(VERSION 3.14)
-project(book_of_shaders_test LANGUAGES CXX)
+project(flutter_book_of_shaders LANGUAGES CXX)
 
 # The name of the executable created for the application. Change this to change
 # the on-disk name of your application.
-set(BINARY_NAME "book_of_shaders_test")
+set(BINARY_NAME "flutter_book_of_shaders")
 
 # Explicitly opt in to modern CMake behaviors to avoid warnings with recent
 # versions of CMake.

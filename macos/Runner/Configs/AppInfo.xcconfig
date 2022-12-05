@@ -5,10 +5,10 @@
 // 'flutter create' template.
 
 // The application's name. By default this is also the title of the Flutter window.
-PRODUCT_NAME = book_of_shaders_test
+PRODUCT_NAME = flutter_book_of_shaders
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.andrewackerman.bookofshaders.bookOfShadersTest
+PRODUCT_BUNDLE_IDENTIFIER = com.abion47.flutterbookofshaders.flutterBookOfShaders
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2022 com.andrewackerman.bookofshaders. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2022 com.abion47.flutterbookofshaders. All rights reserved.

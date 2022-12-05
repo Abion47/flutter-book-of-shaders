@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.andrewackerman.bookofshaders" "\0"
-            VALUE "FileDescription", "book_of_shaders_test" "\0"
+            VALUE "CompanyName", "com.abion47.flutterbookofshaders" "\0"
+            VALUE "FileDescription", "flutter_book_of_shaders" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "book_of_shaders_test" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2022 com.andrewackerman.bookofshaders. All rights reserved." "\0"
-            VALUE "OriginalFilename", "book_of_shaders_test.exe" "\0"
-            VALUE "ProductName", "book_of_shaders_test" "\0"
+            VALUE "InternalName", "flutter_book_of_shaders" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2022 com.abion47.flutterbookofshaders. All rights reserved." "\0"
+            VALUE "OriginalFilename", "flutter_book_of_shaders.exe" "\0"
+            VALUE "ProductName", "flutter_book_of_shaders" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END
