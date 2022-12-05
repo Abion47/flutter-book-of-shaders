@@ -1,0 +1,17 @@
+{
+  "name": "shaders",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "node index.mjs"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "prettier": "~2.8.0"
+  },
+  "dependencies": {
+    "js-yaml": "~4.1.0"
+  }
+}
