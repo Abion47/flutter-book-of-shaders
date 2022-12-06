@@ -43,7 +43,4 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-assets/shaders
-extern/shaderc/*
-!extern/shaderc/README.md
-*.sprv
+*.g.dart

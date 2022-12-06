@@ -4,6 +4,6 @@ A test of custom shaders in Flutter using examples from [The Book of Shaders](ht
 
 ## Getting Started
 
-Install shaderc: [README](extern/shaderc/README.md)
+Shader source files: [shaders/src](shaders/src)
 
-Compile shaders: `./compile-shaders.sh`
+"Compile" shaders: `./compile-shaders.sh`
