@@ -12,7 +12,7 @@ class UVSamplerPage extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text(
-          'uv-sampler.glsl',
+          'misc/uv-sampler.glsl',
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 32),
         ),

@@ -83,7 +83,9 @@ export class RefBuilder {
       if (dir === '') {
         className = '_$UserShaders';
       } else {
-        className = `_$${[...parentDirs, dirPS].join('_')}`;
+        className = `_$${[...parentDirs, dirPS]
+          .join('_')
+          .replace(/^[\d_]+/, '')}`;
       }
 
       if (dir !== '') {
@@ -94,6 +96,7 @@ export class RefBuilder {
       if (this.classes[className] == undefined) {
         this.classes[className] = {
           name: className,
+          shaders: [],
           children: [],
           dirPath: rawParentDirs.join('/'),
         };

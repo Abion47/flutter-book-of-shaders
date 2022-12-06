@@ -19,7 +19,7 @@ class _SimplePageState extends State<SimplePage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text(
-          'simple.glsl',
+          'misc/simple.glsl',
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 32),
         ),

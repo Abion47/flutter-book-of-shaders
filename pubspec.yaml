@@ -14,11 +14,14 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   shaders:
-    - shaders/src/basic/simple.glsl
-    - shaders/src/colors/colors-2/simple.glsl
-    - shaders/src/colors/simple-variant.glsl
-    - shaders/src/colors/simple.glsl
-    - shaders/src/simple-variant.glsl
-    - shaders/src/simple.glsl
-    - shaders/src/simplex-3d.glsl
-    - shaders/src/uv-sampler.glsl
+    - shaders/src/1-getting-started/hello-world.glsl
+    - shaders/src/1-getting-started/uniforms-1.glsl
+    - shaders/src/1-getting-started/uniforms-2.glsl
+    - shaders/src/2-algorithmic-drawing/shaping-functions-1.glsl
+    - shaders/src/2-algorithmic-drawing/shaping-functions-2.glsl
+    - shaders/src/2-algorithmic-drawing/shaping-functions-3.glsl
+    - shaders/src/2-algorithmic-drawing/shaping-functions-4.glsl
+    - shaders/src/misc/creation.glsl
+    - shaders/src/misc/simple.glsl
+    - shaders/src/misc/simplex-3d.glsl
+    - shaders/src/misc/uv-sampler.glsl

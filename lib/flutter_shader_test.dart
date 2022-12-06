@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'pages/creation.dart';
 import 'pages/simple.dart';
-import 'pages/simple_variant.dart';
 import 'pages/simplex_3d.dart';
 import 'pages/uv_sampler.dart';
 
@@ -17,9 +17,9 @@ class _FlutterShaderTestState extends State<FlutterShaderTest> {
 
   final pages = const [
     SimplePage(),
-    SimpleVariantPage(),
     UVSamplerPage(),
     Simplex3DPage(),
+    CreationPage(),
   ];
 
   int currentPage = 0;

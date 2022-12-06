@@ -4,7 +4,7 @@ import '../base/shader_painter.dart';
 import '../shaders/user_shaders.g.dart';
 
 class SimplePainter extends ShaderPainter {
-  SimplePainter(this.i) : super(shader: UserShaders.simple);
+  SimplePainter(this.i) : super(shader: UserShaders.Misc.simple);
 
   final double i;
 

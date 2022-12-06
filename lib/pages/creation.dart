@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 import '../base/shader_painter_wrapper.dart';
-import '../painters/simplex_3d_painter.dart';
+import '../painters/creation_painter.dart';
 
-class Simplex3DPage extends StatefulWidget {
-  const Simplex3DPage({super.key});
+class CreationPage extends StatefulWidget {
+  const CreationPage({super.key});
 
   @override
-  State<Simplex3DPage> createState() => _Simplex3DPageState();
+  State<CreationPage> createState() => _CreationPageState();
 }
 
-class _Simplex3DPageState extends State<Simplex3DPage> {
+class _CreationPageState extends State<CreationPage> {
   double start = 0;
   double time = 0;
 
@@ -37,11 +37,11 @@ class _Simplex3DPageState extends State<Simplex3DPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const Text(
-          'misc/simplex-3d.glsl',
+          'misc/creation.glsl',
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 32),
         ),
-        ShaderWrapper(painter: Simplex3DPainter(time)),
+        ShaderWrapper(painter: CreationPainter(time)),
         Text(
           'time: ${time.toStringAsFixed(2)}',
           textAlign: TextAlign.center,

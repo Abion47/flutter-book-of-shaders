@@ -4,7 +4,7 @@ import '../base/shader_painter.dart';
 import '../shaders/user_shaders.g.dart';
 
 class UVSamplerPainter extends ShaderPainter {
-  UVSamplerPainter() : super(shader: UserShaders.uvSampler);
+  UVSamplerPainter() : super(shader: UserShaders.Misc.uvSampler);
 
   @override
   void paint(Canvas canvas, Size size) {
