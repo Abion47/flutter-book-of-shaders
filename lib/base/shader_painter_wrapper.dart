@@ -7,10 +7,9 @@ class ShaderWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(32),
-      child: AspectRatio(
-        aspectRatio: 1,
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(32),
         child: CustomPaint(
           painter: painter,
         ),

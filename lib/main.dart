@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'flutter_shader_test.dart';
+import 'shader_app.dart';
 import 'shaders/user_shaders.g.dart';
 
 void main() async {
@@ -8,5 +8,5 @@ void main() async {
 
   await UserShaders.initialize();
 
-  runApp(const FlutterShaderTest());
+  runApp(const ShaderApp());
 }

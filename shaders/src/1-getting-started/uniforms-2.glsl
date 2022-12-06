@@ -8,7 +8,6 @@
 
 // Input
 uniform vec2 u_resolution;
-uniform float u_time;
 
 // Output
 out vec4 o_fragColor;
