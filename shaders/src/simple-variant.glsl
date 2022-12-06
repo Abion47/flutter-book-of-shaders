@@ -1,15 +1,12 @@
-#version 320 es
-#pragma shader_stage(fragment)
-
 #ifdef GL_ES
   precision highp float;
 #endif
 
 // Inputs
-layout(location = 0) uniform float a;
+uniform float a;
 
 // Output
-layout(location = 0) out vec4 fragColor;
+out vec4 fragColor;
 
 // Program
 void main() {

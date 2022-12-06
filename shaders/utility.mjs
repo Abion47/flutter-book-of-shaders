@@ -4,14 +4,10 @@ import yaml from 'js-yaml';
 import { exec } from 'child_process';
 
 export const parentDir = path.resolve(process.cwd(), '..');
-const config = yaml.load(fs.readFileSync('../pubspec.yaml'))?.shaders;
+export const pubspecPath = `${parentDir}/pubspec.yaml`;
 
-export const sourceDir = `${parentDir}/${config?.src ?? 'shaders/src'}`;
-export const assetDir = `${parentDir}/${config?.out ?? 'assets/shaders'}`;
-export const glslcPath = `${parentDir}/${
-  config?.shaderc ?? 'extern/shaderc'
-}/bin/glslc`;
-export const dartDefDir = `${parentDir}/${config?.dartRef ?? 'lib/shaders'}`;
+export const sourceDir = `${parentDir}/shaders/src`;
+export const dartDefDir = `${parentDir}/lib/shaders`;
 export const dartDefPath = `${dartDefDir}/user_shaders.g.dart`;
 
 export function snakeCaseToPascalCase(str) {
@@ -50,6 +46,20 @@ export function findFiles(dirPath, opts) {
     parent: dirPath,
     relParent: dirPath.replace(opts.sourceDir, ''),
   }));
+}
+
+export function updatePubspecShaderList(imports) {
+  const pubspecStr = fs.readFileSync(pubspecPath, 'utf-8');
+  const pubspec = yaml.load(pubspecStr);
+
+  const { flutter } = pubspec;
+  if (flutter.shaders == undefined) flutter.shaders = [];
+  const { shaders } = flutter;
+  shaders.length = 0;
+  shaders.push(...imports);
+
+  const newPubspecStr = yaml.dump(pubspec);
+  fs.writeFileSync(pubspecPath, newPubspecStr);
 }
 
 export class RefBuilder {
@@ -129,9 +139,10 @@ export class RefBuilder {
       // Imports
 
       if (dirClass.shaders.length > 0) {
-        let dirPath = `assets/shaders/${dirClass.dirPath}`;
+        let dirPath = `shaders/src/${dirClass.dirPath}`;
         if (!dirPath.endsWith('/')) dirPath = `${dirPath}/`;
-        if (!imports.includes(dirPath)) imports.push(dirPath);
+        for (const shader of dirClass.shaders)
+          imports.push(`${dirPath}${shader.name}`);
       }
 
       // Child classes
@@ -166,7 +177,7 @@ export class RefBuilder {
 
       if (dirClass.shaders.length > 0) {
         for (const shader of dirClass.shaders) {
-          const assetPath = `assets/shaders${shader.relParent}/${shader.basename}.sprv`;
+          const assetPath = `shaders/src${shader.relParent}/${shader.name}`;
           const fieldName = snakeCaseToCamelCase(shader.basename);
           lines.push(
             `    ${fieldName} = (await FragmentProgram.fromAsset('${assetPath}')).fragmentShader();`

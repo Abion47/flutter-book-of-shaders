@@ -1,17 +1,8 @@
-#version 320 es
-#pragma shader_stage(fragment)
+#include <flutter/runtime_effect.glsl>
 
-#ifdef GL_ES
-  precision highp float;
-#endif
-
-// From: https://gist.github.com/patriciogonzalezvivo/670c22f3966e662d2f83
-
-// Inputs
-layout(location = 0) uniform float z;
-
-// Output
-layout(location = 0) out vec4 fragColor;
+uniform vec2 uSize;
+uniform float uTime;
+out vec4 fragColor;
 
 // Program
 /* https://www.shadertoy.com/view/XsX3zB
@@ -121,28 +112,24 @@ float simplex3d_fractal(vec3 m) {
 			+0.0666667*simplex3d(8.0*m);
 }
 
-void mainImage( out vec4 fragColor, in vec2 fragCoord )
+void main()
 {
-	vec2 p = fragCoord.xy/iResolution.x;
-	vec3 p3 = vec3(p, iTime*0.025);
+	vec2 p = FlutterFragCoord().xy / uSize.x;
+	vec3 p3 = vec3(p, uTime * 0.025);
 	
 	float value;
 	
-	if (p.x <= 0.6) {
+	if (p.x <= 0.5) {
 		value = simplex3d(p3*32.0);
 	} else {
 		value = simplex3d_fractal(p3*8.0+8.0);
 	}
 	
 	value = 0.5 + 0.5*value;
-	value *= smoothstep(0.0, 0.005, abs(0.6-p.x)); // hello, iq :)
+	value *= smoothstep(0.0, 0.005, abs(0.5-p.x)); // hello, iq :)
 	
 	fragColor = vec4(
 			vec3(value),
 			1.0);
 	return;
 }
-
-// void main() {
-//   fragColor = vec4(0.0, a, 0.0, 1.0);
-// }

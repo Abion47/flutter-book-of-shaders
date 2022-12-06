@@ -10,12 +10,18 @@ class _$UserShaders {
 
   late final FragmentShader simpleVariant;
   late final FragmentShader simple;
+  late final FragmentShader simplex3d;
+  late final FragmentShader uvSampler;
 
   Future<void> initialize() async {
     simpleVariant =
-        (await FragmentProgram.fromAsset('assets/shaders/simple-variant.sprv'))
+        (await FragmentProgram.fromAsset('shaders/src/simple-variant.glsl'))
             .fragmentShader();
-    simple = (await FragmentProgram.fromAsset('assets/shaders/simple.sprv'))
+    simple = (await FragmentProgram.fromAsset('shaders/src/simple.glsl'))
+        .fragmentShader();
+    simplex3d = (await FragmentProgram.fromAsset('shaders/src/simplex-3d.glsl'))
+        .fragmentShader();
+    uvSampler = (await FragmentProgram.fromAsset('shaders/src/uv-sampler.glsl'))
         .fragmentShader();
 
     await Basic.initialize();
@@ -27,9 +33,8 @@ class _$Basic {
   late final FragmentShader simple;
 
   Future<void> initialize() async {
-    simple =
-        (await FragmentProgram.fromAsset('assets/shaders/basic/simple.sprv'))
-            .fragmentShader();
+    simple = (await FragmentProgram.fromAsset('shaders/src/basic/simple.glsl'))
+        .fragmentShader();
   }
 }
 
@@ -41,11 +46,10 @@ class _$Colors {
 
   Future<void> initialize() async {
     simpleVariant = (await FragmentProgram.fromAsset(
-            'assets/shaders/colors/simple-variant.sprv'))
+            'shaders/src/colors/simple-variant.glsl'))
         .fragmentShader();
-    simple =
-        (await FragmentProgram.fromAsset('assets/shaders/colors/simple.sprv'))
-            .fragmentShader();
+    simple = (await FragmentProgram.fromAsset('shaders/src/colors/simple.glsl'))
+        .fragmentShader();
 
     await Colors2.initialize();
   }
@@ -56,7 +60,7 @@ class _$Colors_Colors2 {
 
   Future<void> initialize() async {
     simple = (await FragmentProgram.fromAsset(
-            'assets/shaders/colors/colors-2/simple.sprv'))
+            'shaders/src/colors/colors-2/simple.glsl'))
         .fragmentShader();
   }
 }
