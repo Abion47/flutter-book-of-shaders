@@ -15,5 +15,5 @@ out vec4 o_fragColor;
 // Main Program
 void main() {
   vec2 st = FlutterFragCoord().xy / u_resolution;
-	o_fragColor = vec4(st, 0.0, 1.0); // RGBA
+  o_fragColor = vec4(st, 0.0, 1.0); // RGBA
 }

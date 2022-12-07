@@ -20,7 +20,7 @@ float plot(vec2 st) {
 
 // Main Program
 void main() {
-	vec2 st = FlutterFragCoord().xy / u_resolution;
+  vec2 st = FlutterFragCoord().xy / u_resolution;
 
   float y = st.x;
   vec3 color = vec3(y);
@@ -29,5 +29,5 @@ void main() {
   float pct = plot(st);
   color = (1.0 - pct) * color + pct * vec3(0.0, 1.0, 0.0);
 
-	o_fragColor = vec4(color, 1.0);
+  o_fragColor = vec4(color, 1.0);
 }

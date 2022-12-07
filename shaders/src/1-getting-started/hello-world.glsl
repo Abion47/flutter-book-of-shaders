@@ -12,5 +12,5 @@ out vec4 o_fragColor;
 
 // Main Program
 void main() {
-	o_fragColor = vec4(1.0, 0.0, 1.0, 1.0); // RGBA
+  o_fragColor = vec4(1.0, 0.0, 1.0, 1.0); // RGBA
 }
