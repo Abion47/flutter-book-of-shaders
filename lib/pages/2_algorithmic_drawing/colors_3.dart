@@ -5,8 +5,8 @@ import '../../base/shader_painter_wrapper.dart';
 import '../../shaders/user_shaders.g.dart';
 import '../static_page.dart';
 
-class UVSamplerPage extends StaticPage {
-  const UVSamplerPage({super.key});
+class Colors3Page extends StaticPage {
+  const Colors3Page({super.key});
 
   @override
   Widget buildPage(BuildContext context) {
@@ -15,22 +15,22 @@ class UVSamplerPage extends StaticPage {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         const Text(
-          'misc/uv-sampler.glsl',
+          '2-algorithmic-drawing/colors-3.glsl',
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 32),
         ),
-        ShaderWrapper(painter: _UVSamplerPainter()),
+        ShaderWrapper(painter: _Colors3Painter()),
       ],
     );
   }
 }
 
-class _UVSamplerPainter extends ShaderPainter {
-  _UVSamplerPainter() : super(shader: UserShaders.Misc.uvSampler);
+class _Colors3Painter extends ShaderPainter {
+  _Colors3Painter() : super(shader: UserShaders.AlgorithmicDrawing.colors3);
 
   @override
   void paint(Canvas canvas, Size size) {
-    // u_size
+    // u_resolution
     shader.setFloat(0, size.width);
     shader.setFloat(1, size.height);
 

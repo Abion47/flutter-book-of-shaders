@@ -3,45 +3,36 @@ import 'package:flutter/material.dart';
 import '../../base/shader_painter.dart';
 import '../../base/shader_painter_wrapper.dart';
 import '../../shaders/user_shaders.g.dart';
-import '../animated_page.dart';
+import '../static_page.dart';
 
-class Simplex3DPage extends AnimatedPage {
-  const Simplex3DPage({super.key});
+class Shapes3Page extends StaticPage {
+  const Shapes3Page({super.key});
 
   @override
-  Widget buildPage(BuildContext context, double time, double deltaTime) {
+  Widget buildPage(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         const Text(
-          'misc/simplex-3d.glsl',
+          '2-algorithmic-drawing/shapes-3.glsl',
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 32),
         ),
-        ShaderWrapper(painter: _Simplex3DPainter(time)),
-        Text(
-          'time: ${time.toStringAsFixed(2)}',
-          textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 32),
-        ),
+        ShaderWrapper(painter: _Shapes3Painter()),
       ],
     );
   }
 }
 
-class _Simplex3DPainter extends ShaderPainter {
-  _Simplex3DPainter(this.time) : super(shader: UserShaders.Misc.simplex3d);
-
-  final double time;
+class _Shapes3Painter extends ShaderPainter {
+  _Shapes3Painter() : super(shader: UserShaders.AlgorithmicDrawing.shapes3);
 
   @override
   void paint(Canvas canvas, Size size) {
     // u_resolution
     shader.setFloat(0, size.width);
     shader.setFloat(1, size.height);
-    // u_time
-    shader.setFloat(2, time);
 
     canvas.drawRect(Offset.zero & size, shaderPaint);
   }

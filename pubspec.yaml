@@ -17,11 +17,24 @@ flutter:
     - shaders/src/1-getting-started/hello-world.glsl
     - shaders/src/1-getting-started/uniforms-1.glsl
     - shaders/src/1-getting-started/uniforms-2.glsl
+    - shaders/src/2-algorithmic-drawing/colors-1.glsl
+    - shaders/src/2-algorithmic-drawing/colors-2.glsl
+    - shaders/src/2-algorithmic-drawing/colors-3.glsl
+    - shaders/src/2-algorithmic-drawing/colors-4.glsl
+    - shaders/src/2-algorithmic-drawing/matrices-2d-1.glsl
+    - shaders/src/2-algorithmic-drawing/matrices-2d-2.glsl
+    - shaders/src/2-algorithmic-drawing/matrices-2d-3.glsl
+    - shaders/src/2-algorithmic-drawing/matrices-2d-4.glsl
+    - shaders/src/2-algorithmic-drawing/shapes-1.glsl
+    - shaders/src/2-algorithmic-drawing/shapes-2.glsl
+    - shaders/src/2-algorithmic-drawing/shapes-3.glsl
+    - shaders/src/2-algorithmic-drawing/shapes-4.glsl
+    - shaders/src/2-algorithmic-drawing/shapes-5.glsl
+    - shaders/src/2-algorithmic-drawing/shapes-6.glsl
     - shaders/src/2-algorithmic-drawing/shaping-functions-1.glsl
     - shaders/src/2-algorithmic-drawing/shaping-functions-2.glsl
     - shaders/src/2-algorithmic-drawing/shaping-functions-3.glsl
     - shaders/src/2-algorithmic-drawing/shaping-functions-4.glsl
     - shaders/src/misc/creation.glsl
-    - shaders/src/misc/simple.glsl
+    - shaders/src/misc/oblivion-radar.glsl
     - shaders/src/misc/simplex-3d.glsl
-    - shaders/src/misc/uv-sampler.glsl

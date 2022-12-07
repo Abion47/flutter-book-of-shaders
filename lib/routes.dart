@@ -4,14 +4,27 @@ import 'main_menu_page.dart';
 import 'pages/1_getting_started/hello_world.dart';
 import 'pages/1_getting_started/uniforms_1.dart';
 import 'pages/1_getting_started/uniforms_2.dart';
+import 'pages/2_algorithmic_drawing/colors_1.dart';
+import 'pages/2_algorithmic_drawing/colors_2.dart';
+import 'pages/2_algorithmic_drawing/colors_3.dart';
+import 'pages/2_algorithmic_drawing/colors_4.dart';
+import 'pages/2_algorithmic_drawing/matrices_2d_1.dart';
+import 'pages/2_algorithmic_drawing/matrices_2d_2.dart';
+import 'pages/2_algorithmic_drawing/matrices_2d_3.dart';
+import 'pages/2_algorithmic_drawing/matrices_2d_4.dart';
+import 'pages/2_algorithmic_drawing/shapes_1.dart';
+import 'pages/2_algorithmic_drawing/shapes_2.dart';
+import 'pages/2_algorithmic_drawing/shapes_3.dart';
+import 'pages/2_algorithmic_drawing/shapes_4.dart';
+import 'pages/2_algorithmic_drawing/shapes_5.dart';
+import 'pages/2_algorithmic_drawing/shapes_6.dart';
 import 'pages/2_algorithmic_drawing/shaping_functions_1.dart';
 import 'pages/2_algorithmic_drawing/shaping_functions_2.dart';
 import 'pages/2_algorithmic_drawing/shaping_functions_3.dart';
 import 'pages/2_algorithmic_drawing/shaping_functions_4.dart';
 import 'pages/misc/creation.dart';
-import 'pages/misc/simple.dart';
+import 'pages/misc/oblivion_radar.dart';
 import 'pages/misc/simplex_3d.dart';
-import 'pages/misc/uv_sampler.dart';
 
 final routes = <String, Widget Function(BuildContext)>{
   '/': (_) => const MainMenuPage(),
@@ -28,9 +41,22 @@ final routes = <String, Widget Function(BuildContext)>{
       const ShapingFunctions3Page(),
   '/2-algorithmic-drawing/shaping-functions-4': (_) =>
       const ShapingFunctions4Page(),
+  '/2-algorithmic-drawing/colors-1': (_) => const Colors1Page(),
+  '/2-algorithmic-drawing/colors-2': (_) => const Colors2Page(),
+  '/2-algorithmic-drawing/colors-3': (_) => const Colors3Page(),
+  '/2-algorithmic-drawing/colors-4': (_) => const Colors4Page(),
+  '/2-algorithmic-drawing/shapes-1': (_) => const Shapes1Page(),
+  '/2-algorithmic-drawing/shapes-2': (_) => const Shapes2Page(),
+  '/2-algorithmic-drawing/shapes-3': (_) => const Shapes3Page(),
+  '/2-algorithmic-drawing/shapes-4': (_) => const Shapes4Page(),
+  '/2-algorithmic-drawing/shapes-5': (_) => const Shapes5Page(),
+  '/2-algorithmic-drawing/shapes-6': (_) => const Shapes6Page(),
+  '/2-algorithmic-drawing/2d-matrices-1': (_) => const Matrices2d1Page(),
+  '/2-algorithmic-drawing/2d-matrices-2': (_) => const Matrices2d2Page(),
+  '/2-algorithmic-drawing/2d-matrices-3': (_) => const Matrices2d3Page(),
+  '/2-algorithmic-drawing/2d-matrices-4': (_) => const Matrices2d4Page(),
   //
-  '/misc/simple': (_) => const SimplePage(),
-  '/misc/uv-sampler': (_) => const UVSamplerPage(),
   '/misc/simplex-3d': (_) => const Simplex3DPage(),
   '/misc/creation': (_) => const CreationPage(),
+  '/misc/oblivion-radar': (_) => const OblivionRadarPage(),
 };

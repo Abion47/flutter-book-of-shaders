@@ -1,4 +1,7 @@
-// https://thebookofshaders.com/05/
+// https://thebookofshaders.com/07/
+
+// Author @patriciogv - 2015
+// http://patriciogonzalezvivo.com
 
 #include <flutter/runtime_effect.glsl>
 
@@ -11,29 +14,26 @@
 
 // Input
 uniform vec2 u_resolution;
-uniform float u_time;
 
 // Output
 out vec4 o_fragColor;
 
-// Plot a line on Y using a value between 0.0-1.0
-float plot(vec2 st) {    
-  return smoothstep(0.02, 0.0, abs(st.y - st.x));
-}
-
-
-// Main Program
 void main() {
   vec2 st = FlutterFragCoord().xy / u_resolution;
   st.y = abs(min(FLUTTER_Y_AXIS_SCALE, 0.0)) 
          + (FLUTTER_Y_AXIS_SCALE * st.y); // Flip y axis for Metal targets
 
-  float y = st.x;
-  vec3 color = vec3(y);
+  vec3 color = vec3(0.0);
 
-  // Plot a line
-  float pct = plot(st);
-  color = (1.0 - pct) * color + pct * vec3(0.0, 1.0, 0.0);
+  // bottom-left
+  vec2 bl = step(vec2(0.1), st);
+  float pct = bl.x * bl.y;
+
+  // top-right
+  // vec2 tr = step(vec2(0.1), 1.0 - st);
+  // pct *= tr.x * tr.y;
+
+  color = vec3(pct);
 
   o_fragColor = vec4(color, 1.0);
 }

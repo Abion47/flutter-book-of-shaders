@@ -5,8 +5,8 @@ import '../../base/shader_painter_wrapper.dart';
 import '../../shaders/user_shaders.g.dart';
 import '../animated_page.dart';
 
-class Simplex3DPage extends AnimatedPage {
-  const Simplex3DPage({super.key});
+class Matrices2d3Page extends AnimatedPage {
+  const Matrices2d3Page({super.key});
 
   @override
   Widget buildPage(BuildContext context, double time, double deltaTime) {
@@ -15,11 +15,11 @@ class Simplex3DPage extends AnimatedPage {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         const Text(
-          'misc/simplex-3d.glsl',
+          '2-algorithmic-drawing/matrices-2d-3.glsl',
           textAlign: TextAlign.center,
           style: TextStyle(fontSize: 32),
         ),
-        ShaderWrapper(painter: _Simplex3DPainter(time)),
+        ShaderWrapper(painter: _Matrices2D3Painter(time)),
         Text(
           'time: ${time.toStringAsFixed(2)}',
           textAlign: TextAlign.center,
@@ -30,8 +30,9 @@ class Simplex3DPage extends AnimatedPage {
   }
 }
 
-class _Simplex3DPainter extends ShaderPainter {
-  _Simplex3DPainter(this.time) : super(shader: UserShaders.Misc.simplex3d);
+class _Matrices2D3Painter extends ShaderPainter {
+  _Matrices2D3Painter(this.time)
+      : super(shader: UserShaders.AlgorithmicDrawing.matrices2d3);
 
   final double time;
 

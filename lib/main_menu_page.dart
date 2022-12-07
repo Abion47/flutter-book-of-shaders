@@ -46,17 +46,65 @@ class MainMenuPage extends StatelessWidget {
                 text: 'Shaping Functions 4',
                 route: ('/2-algorithmic-drawing/shaping-functions-4'),
               ),
+              NavButton(
+                text: 'Colors 1',
+                route: ('/2-algorithmic-drawing/colors-1'),
+              ),
+              NavButton(
+                text: 'Colors 2',
+                route: ('/2-algorithmic-drawing/colors-2'),
+              ),
+              NavButton(
+                text: 'Colors 3',
+                route: ('/2-algorithmic-drawing/colors-3'),
+              ),
+              NavButton(
+                text: 'Colors 4',
+                route: ('/2-algorithmic-drawing/colors-4'),
+              ),
+              NavButton(
+                text: 'Shapes 1',
+                route: ('/2-algorithmic-drawing/shapes-1'),
+              ),
+              NavButton(
+                text: 'Shapes 2',
+                route: ('/2-algorithmic-drawing/shapes-2'),
+              ),
+              NavButton(
+                text: 'Shapes 3',
+                route: ('/2-algorithmic-drawing/shapes-3'),
+              ),
+              NavButton(
+                text: 'Shapes 4',
+                route: ('/2-algorithmic-drawing/shapes-4'),
+              ),
+              NavButton(
+                text: 'Shapes 5',
+                route: ('/2-algorithmic-drawing/shapes-5'),
+              ),
+              NavButton(
+                text: 'Shapes 6',
+                route: ('/2-algorithmic-drawing/shapes-6'),
+              ),
+              NavButton(
+                text: '2D Matrices 1',
+                route: ('/2-algorithmic-drawing/2d-matrices-1'),
+              ),
+              NavButton(
+                text: '2D Matrices 2',
+                route: ('/2-algorithmic-drawing/2d-matrices-2'),
+              ),
+              NavButton(
+                text: '2D Matrices 3',
+                route: ('/2-algorithmic-drawing/2d-matrices-3'),
+              ),
+              NavButton(
+                text: '2D Matrices 4',
+                route: ('/2-algorithmic-drawing/2d-matrices-4'),
+              ),
               //
               NavHeader('Miscellaneous'),
               //
-              NavButton(
-                text: 'Simple',
-                route: ('/misc/simple'),
-              ),
-              NavButton(
-                text: 'UV Sampler',
-                route: ('/misc/uv-sampler'),
-              ),
               NavButton(
                 text: 'Simplex 3D Noise',
                 route: '/misc/simplex-3d',
@@ -64,6 +112,10 @@ class MainMenuPage extends StatelessWidget {
               NavButton(
                 text: '"Creation" by Silexars',
                 route: '/misc/creation',
+              ),
+              NavButton(
+                text: '"Oblivion Radar" by ndel',
+                route: '/misc/oblivion-radar',
               ),
             ],
           ),
