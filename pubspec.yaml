@@ -29,6 +29,9 @@ flutter:
     - shaders/src/2-algorithmic-drawing/matrices-2d-3.glsl
     - shaders/src/2-algorithmic-drawing/matrices-2d-4.glsl
     - shaders/src/2-algorithmic-drawing/patterns-1.glsl
+    - shaders/src/2-algorithmic-drawing/patterns-2.glsl
+    - shaders/src/2-algorithmic-drawing/patterns-3.glsl
+    - shaders/src/2-algorithmic-drawing/patterns-4.glsl
     - shaders/src/2-algorithmic-drawing/shapes-1.glsl
     - shaders/src/2-algorithmic-drawing/shapes-2.glsl
     - shaders/src/2-algorithmic-drawing/shapes-3.glsl

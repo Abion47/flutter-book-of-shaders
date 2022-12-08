@@ -106,6 +106,18 @@ class MainMenuPage extends StatelessWidget {
                 text: 'Patterns 1',
                 route: ('/2-algorithmic-drawing/patterns-1'),
               ),
+              NavButton(
+                text: 'Patterns 2',
+                route: ('/2-algorithmic-drawing/patterns-2'),
+              ),
+              NavButton(
+                text: 'Patterns 3',
+                route: ('/2-algorithmic-drawing/patterns-3'),
+              ),
+              NavButton(
+                text: 'Patterns 4',
+                route: ('/2-algorithmic-drawing/patterns-4'),
+              ),
               //
               NavHeader('Miscellaneous'),
               //
