@@ -16,3 +16,18 @@ abstract class ShaderPainter extends CustomPainter {
   @override
   bool shouldRebuildSemantics(covariant CustomPainter oldDelegate) => true;
 }
+
+abstract class AnimatedShaderPainter extends ShaderPainter {
+  AnimatedShaderPainter(
+    this.time, {
+    required super.shader,
+  });
+
+  final double time;
+
+  @override
+  bool shouldRepaint(ShaderPainter oldDelegate) => true;
+
+  @override
+  bool shouldRebuildSemantics(covariant CustomPainter oldDelegate) => true;
+}

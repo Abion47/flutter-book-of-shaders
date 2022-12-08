@@ -1,40 +1,23 @@
 import 'package:flutter/material.dart';
 
+import '../../base/animated_page.dart';
 import '../../base/shader_painter.dart';
-import '../../base/shader_painter_wrapper.dart';
 import '../../shaders/user_shaders.g.dart';
-import '../animated_page.dart';
 
 class OblivionRadarPage extends AnimatedPage {
   const OblivionRadarPage({super.key});
 
   @override
-  Widget buildPage(BuildContext context, double time, double deltaTime) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        const Text(
-          'misc/oblivion-radar.glsl',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 32),
-        ),
-        ShaderWrapper(painter: _OblivionRadarPainter(time)),
-        Text(
-          'time: ${time.toStringAsFixed(2)}',
-          textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 32),
-        ),
-      ],
-    );
-  }
+  String get title => 'misc/oblivion-radar.glsl';
+
+  @override
+  AnimatedShaderPainter shaderPainter(double time) =>
+      _OblivionRadarPainter(time);
 }
 
-class _OblivionRadarPainter extends ShaderPainter {
-  _OblivionRadarPainter(this.time)
+class _OblivionRadarPainter extends AnimatedShaderPainter {
+  _OblivionRadarPainter(super.time)
       : super(shader: UserShaders.Misc.oblivionRadar);
-
-  final double time;
 
   @override
   void paint(Canvas canvas, Size size) {

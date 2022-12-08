@@ -1,28 +1,17 @@
 import 'package:flutter/material.dart';
 
 import '../../base/shader_painter.dart';
-import '../../base/shader_painter_wrapper.dart';
+import '../../base/static_page.dart';
 import '../../shaders/user_shaders.g.dart';
-import '../static_page.dart';
 
 class Shapes1Page extends StaticPage {
   const Shapes1Page({super.key});
 
   @override
-  Widget buildPage(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        const Text(
-          '2-algorithmic-drawing/shapes-1.glsl',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 32),
-        ),
-        ShaderWrapper(painter: _Shapes1Painter()),
-      ],
-    );
-  }
+  String get title => '2-algorithmic-drawing/shapes-1.glsl';
+
+  @override
+  ShaderPainter shaderPainter() => _Shapes1Painter();
 }
 
 class _Shapes1Painter extends ShaderPainter {

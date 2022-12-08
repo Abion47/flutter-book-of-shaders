@@ -1,28 +1,17 @@
 import 'package:flutter/material.dart';
 
 import '../../base/shader_painter.dart';
-import '../../base/shader_painter_wrapper.dart';
+import '../../base/static_page.dart';
 import '../../shaders/user_shaders.g.dart';
-import '../static_page.dart';
 
 class Uniforms2Page extends StaticPage {
   const Uniforms2Page({super.key});
 
   @override
-  Widget buildPage(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        const Text(
-          '1-getting-started/uniforms-2.glsl',
-          textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 32),
-        ),
-        ShaderWrapper(painter: _Uniforms2Painter()),
-      ],
-    );
-  }
+  String get title => '1-getting-started/uniforms-2.glsl';
+
+  @override
+  ShaderPainter shaderPainter() => _Uniforms2Painter();
 }
 
 class _Uniforms2Painter extends ShaderPainter {

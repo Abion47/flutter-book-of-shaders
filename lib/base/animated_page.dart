@@ -1,11 +1,22 @@
 import 'package:flutter/material.dart';
 
+import 'shader_painter.dart';
+import 'shader_painter_wrapper.dart';
+
 abstract class AnimatedPage extends StatefulWidget {
   const AnimatedPage({super.key});
 
   int get frameSampleCount => 10;
 
-  Widget buildPage(BuildContext context, double time, double deltaTime);
+  String get title;
+  AnimatedShaderPainter shaderPainter(double time);
+
+  List<Widget> buildPageChildren(
+    BuildContext context,
+    double time,
+    double deltaTime,
+  ) =>
+      [];
 
   @override
   State<AnimatedPage> createState() => _AnimatedPageState();
@@ -47,13 +58,33 @@ class _AnimatedPageState extends State<AnimatedPage> {
         _frameTimes.length *
         1000;
 
-    final child = widget.buildPage(context, _time, _deltaTime);
+    final children = widget.buildPageChildren(context, _time, _deltaTime);
     return Scaffold(
       appBar: AppBar(),
       body: Banner(
         message: '${avgMs.toStringAsFixed(1)}ms',
         location: BannerLocation.topStart,
-        child: child,
+        child: FractionallySizedBox(
+          widthFactor: 1.0,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                widget.title,
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 32),
+              ),
+              ShaderWrapper(painter: widget.shaderPainter(_time)),
+              Text(
+                'time: ${_time.toStringAsFixed(2)}',
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 32),
+              ),
+              ...children,
+            ],
+          ),
+        ),
       ),
     );
   }

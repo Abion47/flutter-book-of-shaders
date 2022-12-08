@@ -6,8 +6,22 @@
   precision mediump float;
 #endif
 
-// Constants
+/**
+* Automatic metal y-axis conversion
+* */
+#ifndef FLUTTER_Y_AXIS_SCALE
 #define FLUTTER_Y_AXIS_SCALE -1 // Change to 1 for GLSL targets and -1 for Metal targets
+#endif
+
+vec2 fl_FragCoord(vec2 resolution) {
+  vec2 fragCoord = FlutterFragCoord().xy;
+
+  #if FLUTTER_Y_AXIS_SCALE < 0
+  fragCoord.y = resolution.y - fragCoord.y; // Flip y axis for Metal targets
+  #endif
+
+  return fragCoord;
+}
 
 // Input
 uniform vec2 u_resolution;
@@ -21,13 +35,9 @@ float plot(vec2 st) {
   return smoothstep(0.02, 0.0, abs(st.y - st.x));
 }
 
-
 // Main Program
 void main() {
-  vec2 st = FlutterFragCoord().xy / u_resolution;
-  st.y = abs(min(FLUTTER_Y_AXIS_SCALE, 0.0)) 
-         + (FLUTTER_Y_AXIS_SCALE * st.y); // Flip y axis for Metal targets
-
+  vec2 st = fl_FragCoord(u_resolution) / u_resolution;
   float y = st.x;
   vec3 color = vec3(y);
 
