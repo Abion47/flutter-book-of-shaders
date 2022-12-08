@@ -119,10 +119,25 @@ class MainMenuPage extends StatelessWidget {
                 route: ('/2-algorithmic-drawing/patterns-4'),
               ),
               //
+              NavHeader('3. Generative Designs'),
+              //
+              NavButton(
+                text: 'Random 1',
+                route: ('/3-generative-designs/random-1'),
+              ),
+              NavButton(
+                text: 'Random 2',
+                route: ('/3-generative-designs/random-2'),
+              ),
+              NavButton(
+                text: 'Random 3',
+                route: ('/3-generative-designs/random-3'),
+              ),
+              //
               NavHeader('Miscellaneous'),
               //
               NavButton(
-                text: 'Simplex 3D Noise',
+                text: '"3D Simplex Noise" by nikat',
                 route: '/misc/simplex-3d',
               ),
               NavButton(

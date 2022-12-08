@@ -42,6 +42,9 @@ flutter:
     - shaders/src/2-algorithmic-drawing/shaping-functions-2.glsl
     - shaders/src/2-algorithmic-drawing/shaping-functions-3.glsl
     - shaders/src/2-algorithmic-drawing/shaping-functions-4.glsl
+    - shaders/src/3-generative-designs/random-1.glsl
+    - shaders/src/3-generative-designs/random-2.glsl
+    - shaders/src/3-generative-designs/random-3.glsl
     - shaders/src/misc/creation.glsl
     - shaders/src/misc/oblivion-radar.glsl
     - shaders/src/misc/simplex-3d.glsl

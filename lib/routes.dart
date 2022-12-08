@@ -26,6 +26,9 @@ import 'pages/2_algorithmic_drawing/shaping_functions_1.dart';
 import 'pages/2_algorithmic_drawing/shaping_functions_2.dart';
 import 'pages/2_algorithmic_drawing/shaping_functions_3.dart';
 import 'pages/2_algorithmic_drawing/shaping_functions_4.dart';
+import 'pages/3_generative_designs/random_1.dart';
+import 'pages/3_generative_designs/random_2.dart';
+import 'pages/3_generative_designs/random_3.dart';
 import 'pages/misc/creation.dart';
 import 'pages/misc/oblivion_radar.dart';
 import 'pages/misc/simplex_3d.dart';
@@ -63,6 +66,10 @@ final routes = <String, Widget Function(BuildContext)>{
   '/2-algorithmic-drawing/patterns-2': (_) => const Patterns2Page(),
   '/2-algorithmic-drawing/patterns-3': (_) => const Patterns3Page(),
   '/2-algorithmic-drawing/patterns-4': (_) => const Patterns4Page(),
+  //
+  '/3-generative-designs/random-1': (_) => const Random1Page(),
+  '/3-generative-designs/random-2': (_) => const Random2Page(),
+  '/3-generative-designs/random-3': (_) => const Random3Page(),
   //
   '/misc/simplex-3d': (_) => const Simplex3DPage(),
   '/misc/creation': (_) => const CreationPage(),
