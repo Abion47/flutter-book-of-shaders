@@ -3,7 +3,7 @@
 // http://www.pouet.net/prod.php?which=57245
 // If you intend to reuse this shader, please add credits to 'Danilo Guanabara'
 
-#include <flutter/runtime_effect.glsl>
+#include <../fl-utility.glsl>
 
 #ifdef GL_ES
   precision mediump float;
@@ -21,7 +21,7 @@ void main(){
   vec3 c;
   float l,z=u_time;
   for(int i=0;i<3;i++) {
-    vec2 uv,p=FlutterFragCoord().xy/u_resolution;
+    vec2 uv,p=fl_FragCoord(u_resolution)/u_resolution;
     uv=p;
     p-=.5;
     p.x*=u_resolution.x/u_resolution.y;

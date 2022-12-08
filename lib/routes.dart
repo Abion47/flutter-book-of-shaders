@@ -12,6 +12,7 @@ import 'pages/2_algorithmic_drawing/matrices_2d_1.dart';
 import 'pages/2_algorithmic_drawing/matrices_2d_2.dart';
 import 'pages/2_algorithmic_drawing/matrices_2d_3.dart';
 import 'pages/2_algorithmic_drawing/matrices_2d_4.dart';
+import 'pages/2_algorithmic_drawing/patterns_1.dart';
 import 'pages/2_algorithmic_drawing/shapes_1.dart';
 import 'pages/2_algorithmic_drawing/shapes_2.dart';
 import 'pages/2_algorithmic_drawing/shapes_3.dart';
@@ -55,6 +56,7 @@ final routes = <String, Widget Function(BuildContext)>{
   '/2-algorithmic-drawing/2d-matrices-2': (_) => const Matrices2d2Page(),
   '/2-algorithmic-drawing/2d-matrices-3': (_) => const Matrices2d3Page(),
   '/2-algorithmic-drawing/2d-matrices-4': (_) => const Matrices2d4Page(),
+  '/2-algorithmic-drawing/patterns-1': (_) => const Patterns1Page(),
   //
   '/misc/simplex-3d': (_) => const Simplex3DPage(),
   '/misc/creation': (_) => const CreationPage(),

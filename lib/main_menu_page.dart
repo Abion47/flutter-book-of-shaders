@@ -102,6 +102,10 @@ class MainMenuPage extends StatelessWidget {
                 text: '2D Matrices 4',
                 route: ('/2-algorithmic-drawing/2d-matrices-4'),
               ),
+              NavButton(
+                text: 'Patterns 1',
+                route: ('/2-algorithmic-drawing/patterns-1'),
+              ),
               //
               NavHeader('Miscellaneous'),
               //

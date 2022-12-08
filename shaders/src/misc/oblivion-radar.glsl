@@ -3,10 +3,9 @@
 //Sci-fi radar based on the work of gmunk for Oblivion
 //http://work.gmunk.com/OBLIVION-GFX
 
-#include <flutter/runtime_effect.glsl>
+#include <../fl-utility.glsl>
 
 // Constants
-#define FLUTTER_Y_AXIS_SCALE -1 // Change to 1 for GLSL targets and -1 for Metal targets
 #define M_PI 3.1415926535897932384626433832795
 #define blue1 vec3(0.74,0.95,1.00)
 #define blue2 vec3(0.87,0.98,1.00)
@@ -116,7 +115,7 @@ float bip2(vec2 uv, vec2 center) {
 
 void main() {
   vec3 finalColor;
-  vec2 uv = FlutterFragCoord().xy;
+  vec2 uv = fl_FragCoord(u_resolution);
   uv.y = (abs(min(FLUTTER_Y_AXIS_SCALE, 0.0)) * u_resolution.y)
         + (FLUTTER_Y_AXIS_SCALE * uv.y); // Flip y axis for Metal targets
 

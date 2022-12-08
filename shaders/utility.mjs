@@ -33,25 +33,43 @@ export function execAsync(command) {
   });
 }
 
-export function findFiles(dirPath, opts) {
-  const fileInfos = fs.readdirSync(dirPath, { withFileTypes: true });
-  return fileInfos.map((info) => ({
-    name: info.name,
-    basename: path.basename(info.name, path.extname(info.name)),
-    fullname: path.resolve(dirPath, info.name),
-    relname: path.resolve(dirPath, info.name).replace(opts.sourceDir, ''),
-    extension: path.extname(info.name),
-    isFile: info.isFile(),
-    isDirectory: info.isDirectory(),
-    parent: dirPath,
-    relParent: dirPath.replace(opts.sourceDir, ''),
-  }));
-}
-
-export function updatePubspecShaderList(imports) {
+export function loadPubspec() {
   const pubspecStr = fs.readFileSync(pubspecPath, 'utf-8');
   const pubspec = yaml.load(pubspecStr);
+  return pubspec;
+}
 
+export function findFiles(dirPath, opts) {
+  const fileInfos = fs.readdirSync(dirPath, { withFileTypes: true });
+  return fileInfos
+    .filter((info) => {
+      if (!opts?.exclude) return true;
+      const fullname = path.resolve(dirPath, info.name);
+      for (const pattern of opts.exclude) {
+        if (fullname.match(pattern.replace('*', '.*?').replace('.', '\\.')))
+          return false;
+      }
+      if (!opts?.include) return true;
+      for (const pattern of opts.include) {
+        if (fullname.match(pattern.replace('*', '.*?').replace('.', '\\.')))
+          return true;
+      }
+      return false;
+    })
+    .map((info) => ({
+      name: info.name,
+      basename: path.basename(info.name, path.extname(info.name)),
+      fullname: path.resolve(dirPath, info.name),
+      relname: path.resolve(dirPath, info.name).replace(opts.sourceDir, ''),
+      extension: path.extname(info.name),
+      isFile: info.isFile(),
+      isDirectory: info.isDirectory(),
+      parent: dirPath,
+      relParent: dirPath.replace(opts.sourceDir, ''),
+    }));
+}
+
+export function updatePubspecShaderList(pubspec, imports) {
   const { flutter } = pubspec;
   if (flutter.shaders == undefined) flutter.shaders = [];
   const { shaders } = flutter;

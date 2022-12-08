@@ -30,10 +30,7 @@
  *
  */
 
-#include <flutter/runtime_effect.glsl>
-
-// Constants
-#define FLUTTER_Y_AXIS_SCALE -1 // Change to 1 for GLSL targets and -1 for Metal targets
+#include <../fl-utility.glsl>
 
 // Input
 uniform vec2 u_resolution;
@@ -125,10 +122,7 @@ float simplex3d_fractal(vec3 m) {
 }
 
 void main() {
-  vec2 p = FlutterFragCoord().xy / u_resolution.x;
-  p.y = abs(min(FLUTTER_Y_AXIS_SCALE, 0.0)) 
-        + (FLUTTER_Y_AXIS_SCALE * p.y); // Flip y axis for Metal targets
-
+  vec2 p = fl_FragCoord(u_resolution) / u_resolution.x;
   vec3 p3 = vec3(p, u_time * 0.025);
   
   float value;

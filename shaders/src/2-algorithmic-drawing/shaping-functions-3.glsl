@@ -1,27 +1,10 @@
 // https://thebookofshaders.com/05/
 
-#include <flutter/runtime_effect.glsl>
+#include <../fl-utility.glsl>
 
 #ifdef GL_ES
   precision mediump float;
 #endif
-
-/**
-* Automatic metal y-axis conversion
-* */
-#ifndef FLUTTER_Y_AXIS_SCALE
-#define FLUTTER_Y_AXIS_SCALE -1 // Change to 1 for GLSL targets and -1 for Metal targets
-#endif
-
-vec2 fl_FragCoord(vec2 resolution) {
-  vec2 fragCoord = FlutterFragCoord().xy;
-
-  #if FLUTTER_Y_AXIS_SCALE < 0
-  fragCoord.y = resolution.y - fragCoord.y; // Flip y axis for Metal targets
-  #endif
-
-  return fragCoord;
-}
 
 // Constants
 #define PI 3.14159265359
